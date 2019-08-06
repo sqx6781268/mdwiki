@@ -1319,7 +1319,7 @@ var MDwiki;
 
         return (elbottom <= bottom) && (eltop >= top);
     }
-
+	// 创建页面内容菜单侧边栏
     function createPageContentMenu () {
 
         // assemble the menu
