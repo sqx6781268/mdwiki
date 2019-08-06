@@ -551,6 +551,7 @@ var MDwiki;
                     done();
                 });
             };
+			// 注册获取页面通过ajax
             Wiki.prototype.registerFetchMarkdown = function () {
                 var _this = this;
                 var md = '';
@@ -584,7 +585,7 @@ var MDwiki;
                     done();
                 });
             };
-
+				//注册Gimmic
             Wiki.prototype.registerGimmickLoad = function () {
                 var _this = this;
                 $.md.stage('ready').subscribe(function (done) {
@@ -594,6 +595,7 @@ var MDwiki;
                     done();
                 });
             };
+			//注册顶部导航栏
             Wiki.prototype.registerBuildNavigation = function (navMD) {
                 $.md.stage('transform').subscribe(function (done) {
                     if (navMD === '') {
@@ -623,7 +625,7 @@ var MDwiki;
                     done();
                 });
             };
-
+			// 注册最后的任务
             Wiki.prototype.registerFinalTasks = function () {
                 $.md.stage('all_ready').finished().done(function () {
                     $('html').removeClass('md-hidden-load');
@@ -1204,9 +1206,11 @@ var MDwiki;
 
         $navbar.appendTo('#md-menu');
         // .eq(0) becase we dont want navbar-right to be appended to
+		// .eq（0）因为我们不希望将navbar-right附加到
         $('#md-menu ul.nav').eq(0).append($menuContent);
 
         // the menu should be the first element in the body
+		// 菜单应该是正文中的第一个元素
         $('#md-menu').prependTo('#md-all');
 
         var brand_text = $('#md-menu h1').toptext();
@@ -1241,7 +1245,7 @@ var MDwiki;
         $('#md-menu-container').insertAfter ($('#md-title-container'));
         */
     }
-
+	// 构建菜单
     function buildMenu () {
         if ($('#md-menu a').length === 0) {
             return;
